@@ -13,7 +13,7 @@ public class SingletonDP {
         }
     }
 
-    // Step 3: provide a public method to get the instance
+    // Step 3: provide a public static method to get the instance
     public static SingletonDP getInstance() {
         if (singletonDPInstance == null) {
             // when thread context switching happens, it should not create a new object.

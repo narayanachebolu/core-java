@@ -16,7 +16,7 @@ public class ReflectionTest {
                 singletonReflectionInstance.printHashcode();
             }
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println("Exception while creating instance: " + e.getMessage());
         }
     }
 }
