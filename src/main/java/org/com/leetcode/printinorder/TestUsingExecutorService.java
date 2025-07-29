@@ -21,6 +21,7 @@ public class TestUsingExecutorService {
         List<Runnable> tasks = Arrays.asList(
                 () -> {
                     try {
+                        System.out.println("Calling first.");
                         countDownLatchFoo.first(printFirst);
                     } catch (InterruptedException ix) {
                         Thread.currentThread().interrupt();
@@ -28,6 +29,7 @@ public class TestUsingExecutorService {
                 },
                 () -> {
                     try {
+                        System.out.println("Calling second.");
                         countDownLatchFoo.second(printSecond);
                     } catch (InterruptedException ix) {
                         Thread.currentThread().interrupt();
@@ -35,6 +37,7 @@ public class TestUsingExecutorService {
                 },
                 () -> {
                     try {
+                        System.out.println("Calling third.");
                         countDownLatchFoo.third(printThird);
                     } catch (InterruptedException ix) {
                         Thread.currentThread().interrupt();
@@ -50,7 +53,7 @@ public class TestUsingExecutorService {
             executorService.submit(task);
         }
 
-        // shut down executor
+        // shut down executor - manual cleanup for classic pools
         executorService.shutdown();
     }
 }

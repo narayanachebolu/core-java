@@ -5,9 +5,9 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class LockConditionFoo {
-    private Lock lock = new ReentrantLock();
-    private Condition firstDone = lock.newCondition();
-    private Condition secondDone = lock.newCondition();
+    private final Lock lock = new ReentrantLock();
+    private final Condition firstDone = lock.newCondition();
+    private final Condition secondDone = lock.newCondition();
     private int step = 1;
 
     public LockConditionFoo() {}

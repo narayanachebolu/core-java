@@ -3,8 +3,8 @@ package org.com.leetcode.printinorder;
 import java.util.concurrent.Semaphore;
 
 public class SemaphoreFoo {
-    private Semaphore firstDone = new Semaphore(0);
-    private Semaphore secondDone = new Semaphore(0);
+    private final Semaphore firstDone = new Semaphore(0);
+    private final Semaphore secondDone = new Semaphore(0);
 
     public SemaphoreFoo() {}
 

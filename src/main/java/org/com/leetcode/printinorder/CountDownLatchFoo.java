@@ -9,8 +9,8 @@ import java.util.concurrent.CountDownLatch;
  *   secondDone — lets third() wait until second() is done.
  */
 public class CountDownLatchFoo {
-    private CountDownLatch firstDone;
-    private CountDownLatch secondDone;
+    private final CountDownLatch firstDone;
+    private final CountDownLatch secondDone;
 
     public CountDownLatchFoo() {
         firstDone = new CountDownLatch(1);
