@@ -1,4 +1,4 @@
-package org.com.interview.on31072025;
+package interview.on31072025;
 
 import java.util.Arrays;
 import java.util.stream.IntStream;
