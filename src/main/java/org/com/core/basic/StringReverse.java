@@ -10,6 +10,8 @@ public class StringReverse {
         System.out.println(conventionalWay(str));
 
         System.out.println("Using java streams: " + strReverse(str));
+
+        System.out.println("Using StringBuilder and Lambdas: " + usingStringBuilder(str));
     }
 
     private static String conventionalWay(String str) {
@@ -28,5 +30,9 @@ public class StringReverse {
                 .mapToObj(i -> str.charAt(str.length() - i))
                 .map(String::valueOf)
                 .collect(Collectors.joining());
+    }
+
+    private static String usingStringBuilder(String str) {
+        return new StringBuilder(str).reverse().toString();
     }
 }
