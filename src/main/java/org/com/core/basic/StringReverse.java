@@ -15,6 +15,8 @@ public class StringReverse {
     }
 
     private static String conventionalWay(String str) {
+        if (str == null || str.isEmpty()) return str;
+
         StringBuilder rev = new StringBuilder();
         for (int i = str.length() - 1; i >= 0; i--) {
             rev.append(str.charAt(i));
@@ -24,6 +26,8 @@ public class StringReverse {
     }
 
     private static String strReverse(String str) {
+        if (str == null || str.isEmpty()) return str;
+
         StringBuilder rev = new StringBuilder();
         return IntStream
                 .rangeClosed(1, str.length())
@@ -33,6 +37,8 @@ public class StringReverse {
     }
 
     private static String usingStringBuilder(String str) {
+        if (str == null || str.isEmpty()) return str;
+        
         return new StringBuilder(str).reverse().toString();
     }
 }
