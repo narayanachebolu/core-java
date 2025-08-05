@@ -38,7 +38,7 @@ public class StringReverse {
 
     private static String usingStringBuilder(String str) {
         if (str == null || str.isEmpty()) return str;
-        
+
         return new StringBuilder(str).reverse().toString();
     }
 }
