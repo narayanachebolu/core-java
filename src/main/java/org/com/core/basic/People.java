@@ -1,4 +1,9 @@
 package org.com.core.basic;
 
-public class People {
+import java.util.Objects;
+
+public record People(String name, int age, String address, int department) {
+    public People {
+        Objects.requireNonNull(name);
+    }
 }
