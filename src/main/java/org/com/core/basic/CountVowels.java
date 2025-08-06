@@ -1,5 +1,6 @@
 package org.com.core.basic;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -32,7 +33,7 @@ public class CountVowels {
 
     private static Map<Character, Long> countByVowels(String str) {
         if (str == null || str.isEmpty()) {
-            return new HashMap<>();
+            return Collections.emptyMap();
         }
 
         return str.toLowerCase()
@@ -44,7 +45,7 @@ public class CountVowels {
 
     private static Map<Character, Long> countByVowelsCaseSensitive(String str) {
         if (str == null || str.isEmpty()) {
-            return new HashMap<>();
+            return Collections.emptyMap();
         }
 
         return str
