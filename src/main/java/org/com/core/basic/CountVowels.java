@@ -9,10 +9,12 @@ import java.util.stream.IntStream;
 
 public class CountVowels {
     public static void main(String[] args) {
-        String str = "Functional Programming with Java Streams";
+        String str = "FunctiOnal ProgrAmming with JavA StreAms";
         System.out.println("Vowels in a given string are " + countVowels(str));
 
         System.out.println("Count by each vowel: " + countByVowels(str));
+
+        System.out.println("Count by each vowel(case sensitive):" + countByVowelsCaseSensitive(str));
     }
 
     private static long countVowels(String str) {
@@ -37,6 +39,18 @@ public class CountVowels {
                 .chars()
                 .mapToObj(c -> (char)c)
                 .filter(c -> "aeiou".indexOf(c) >= 0)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+    }
+
+    private static Map<Character, Long> countByVowelsCaseSensitive(String str) {
+        if (str == null || str.isEmpty()) {
+            return new HashMap<>();
+        }
+
+        return str
+                .chars()
+                .mapToObj(c -> (char)c)
+                .filter(c -> "AEIOUaeiou".indexOf(c) >= 0)
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 }
