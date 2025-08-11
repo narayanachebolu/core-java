@@ -19,7 +19,7 @@ public class ProgressBar {
      * 2) .repeat() → Java 11 method to repeat a character N times.
      * 3) Formatting → we use String.format to align MB values and percentages neatly.
      * 4) Simulation → Thread.sleep() + increment simulate data being downloaded.
-     * 
+     *
      * @param current
      * @param total
      */
@@ -34,6 +34,6 @@ public class ProgressBar {
         String progressText = String.format("\rKafka  %6.1fMB / %6.1fMB Pulling  %s  %3.0f%%",
                 current / (1024.0 * 1024), total / (1024.0 * 1024), bar, progress * 100);
 
-        System.out.println(progressText);
+        System.out.print(progressText);
     }
 }
