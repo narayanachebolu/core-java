@@ -1,14 +1,19 @@
 package org.com.core.threads.multiprocess;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.net.URISyntaxException;
 
 public class PingPongLauncher {
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws IOException, InterruptedException, URISyntaxException {
         String javaCmd = "java";
-        String classPath = "/home/nchebolu/workspace/java/core/target/classes";
+        // get the classpath of the running jar.
+        // This way, whether you run from classes or from a JAR, the child processes will get the correct classpath.
+        String classPath = new File(PingPongLauncher.class
+                .getProtectionDomain()
+                .getCodeSource()
+                .getLocation()
+                .toURI()
+        ).getPath();
 
         // Fully qualified class names
         String serverClass = "org.com.core.threads.multiprocess.PingPongServer";
