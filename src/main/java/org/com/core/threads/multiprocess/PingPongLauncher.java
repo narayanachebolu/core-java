@@ -20,12 +20,12 @@ public class PingPongLauncher {
         String clientClass = "org.com.core.threads.multiprocess.PingPongClient";
 
         // server process
-        ProcessBuilder serverProcessBuilder = new ProcessBuilder(javaCmd, "-classpath", classPath, serverClass);
+        ProcessBuilder serverProcessBuilder = new ProcessBuilder(javaCmd, "-cp", classPath, serverClass);
         serverProcessBuilder.redirectErrorStream(true);
         Process serverProcess = serverProcessBuilder.start();
 
         // client process
-        ProcessBuilder clientProcessBuilder = new ProcessBuilder(javaCmd, "-classpath", classPath, clientClass);
+        ProcessBuilder clientProcessBuilder = new ProcessBuilder(javaCmd, "-cp", classPath, clientClass);
         clientProcessBuilder.redirectErrorStream(true);
         Process clientProcess = clientProcessBuilder.start();
 
